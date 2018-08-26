@@ -34,4 +34,9 @@ public class Constants {
     public static int AMETHYST_ID = 21347;
     public static int MBOX_ID = 6199;
 
+    public static int PROSPECTOR_HAT_ID = 12013;
+    public static int PROSPECTOR_TOP_ID = 12014;
+    public static int PROSPECTOR_BOTTOM_ID = 12015;
+    public static int PROSPECTOR_BOOTS_ID = 12016;
+
 }
