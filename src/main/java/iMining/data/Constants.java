@@ -32,5 +32,6 @@ public class Constants {
 
     //RANDOM DROP ID's
     public static int AMETHYST_ID = 21347;
+    public static int MBOX_ID = 6199;
 
 }

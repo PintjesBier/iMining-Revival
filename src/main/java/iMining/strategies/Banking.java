@@ -6,11 +6,10 @@ import org.parabot.core.ui.Logger;
 import org.parabot.environment.api.utils.Time;
 import org.parabot.environment.scripts.framework.SleepCondition;
 import org.parabot.environment.scripts.framework.Strategy;
-import org.rev317.min.api.methods.*;
-
-import java.util.Collection;
-
-import static org.rev317.min.api.methods.Players.getMyPlayer;
+import org.rev317.min.api.methods.Bank;
+import org.rev317.min.api.methods.Game;
+import org.rev317.min.api.methods.Inventory;
+import org.rev317.min.api.methods.SceneObjects;
 
 /**
  * Created by Tristan on 26/08/2018.

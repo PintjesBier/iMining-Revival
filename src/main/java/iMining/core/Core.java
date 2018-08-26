@@ -1,7 +1,6 @@
 package iMining.core;
 
 
-import iMining.data.Area;
 import iMining.strategies.Banking;
 import iMining.strategies.DataGathering;
 import iMining.strategies.Mining;
@@ -14,11 +13,10 @@ import org.rev317.min.api.events.MessageEvent;
 import org.rev317.min.api.events.listeners.MessageListener;
 import org.rev317.min.api.methods.Skill;
 import org.rev317.min.api.wrappers.SceneObject;
-import org.rev317.min.api.wrappers.Tile;
 
 import java.awt.*;
 import java.text.DecimalFormat;
-import java.util.*;
+import java.util.ArrayList;
 
 /**
  * Created by Tristan on 14/03/2018.

@@ -3,21 +3,15 @@ package iMining.strategies;
 import iMining.core.Core;
 import iMining.data.Constants;
 import iMining.data.Methods;
-import com.sun.xml.internal.messaging.saaj.util.FinalArrayList;
 import org.parabot.core.ui.Logger;
 import org.parabot.environment.api.utils.Time;
 import org.parabot.environment.scripts.framework.SleepCondition;
 import org.parabot.environment.scripts.framework.Strategy;
-import org.rev317.min.accessors.Ground;
 import org.rev317.min.api.methods.Game;
 import org.rev317.min.api.methods.GroundItems;
 import org.rev317.min.api.methods.Inventory;
 import org.rev317.min.api.methods.SceneObjects;
-import org.rev317.min.api.wrappers.GroundItem;
-import org.rev317.min.api.wrappers.SceneObject;
-import sun.reflect.generics.tree.Tree;
 
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,9 +27,16 @@ public class Mining implements Strategy {
     }
 
     @Override
-    public void execute() {
+    public void execute()
+    {
+        //VARIABLES
+        List<Integer> RandomDrops = new ArrayList<Integer>();
+        RandomDrops.add(Constants.AMETHYST_ID);
+        RandomDrops.add(Constants.MBOX_ID);
+
         //WOODCUTTING CLASS
-        if (getMyPlayer().getAnimation() == -1) {
+        if (getMyPlayer().getAnimation() == -1)
+        {
             Core.CurrentStatus = "Mining rocks";
             Logger.addMessage("iMining: Mining rocks", true);
             Core.Rock = SceneObjects.getClosest(Methods.CheckRockToMine());
@@ -70,25 +71,25 @@ public class Mining implements Strategy {
         }
 
         //LOOP THROUGH RANDOM DROPS
-        if ((GroundItems.getClosest(Constants.AMETHYST_ID) != null) && GroundItems.getClosest(Constants.AMETHYST_ID).distanceTo() <= 20) {
-            try {
-                Core.CurrentStatus = "Taking random drop";
-                Logger.addMessage("iMining: Taking random drop", true);
-                GroundItems.getClosest(Constants.AMETHYST_ID).take();
+        for (final int i : RandomDrops) {
+            if ((GroundItems.getClosest(i) != null) && GroundItems.getClosest(i).distanceTo() <= 10) {
+                try {
+                    Core.CurrentStatus = "Taking random drop";
+                    Logger.addMessage("iMining: Taking random drop", true);
+                    GroundItems.getClosest(i).take();
 
-                //WAIT FOR ACTION
-                Time.sleep(new SleepCondition() {
-                    @Override
-                    public boolean isValid() {
-                        return Inventory.contains(Constants.AMETHYST_ID);
-                    }
-                }, 2000);
-                Time.sleep(550, 850);
-            } catch (Exception e) {
-                e.printStackTrace();
+                    //WAIT FOR ACTION
+                    Time.sleep(new SleepCondition() {
+                        @Override
+                        public boolean isValid() {
+                            return Inventory.contains(i);
+                        }
+                    }, 2000);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
+
     }
-
 }
-
