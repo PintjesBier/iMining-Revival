@@ -30,13 +30,17 @@ public class Mining implements Strategy {
     public void execute()
     {
         //VARIABLES
-        List<Integer> RandomDrops = new ArrayList<Integer>();
+        List<Integer> RandomDrops = new ArrayList<>();
         RandomDrops.add(Constants.AMETHYST_ID);
         RandomDrops.add(Constants.MBOX_ID);
         RandomDrops.add(Constants.PROSPECTOR_HAT_ID);
         RandomDrops.add(Constants.PROSPECTOR_TOP_ID);
         RandomDrops.add(Constants.PROSPECTOR_BOTTOM_ID);
         RandomDrops.add(Constants.PROSPECTOR_BOOTS_ID);
+        RandomDrops.add(Constants.CLUE_GEODE_EASY_ID);
+        RandomDrops.add(Constants.CLUE_GEODE_MEDIUM_ID);
+        RandomDrops.add(Constants.CLUE_GEODE_HARD_ID);
+        RandomDrops.add(Constants.CLUE_GEODE_MASTER_ID);
 
         //WOODCUTTING CLASS
         if (getMyPlayer().getAnimation() == -1)

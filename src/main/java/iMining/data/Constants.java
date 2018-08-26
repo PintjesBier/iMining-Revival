@@ -39,4 +39,9 @@ public class Constants {
     public static int PROSPECTOR_BOTTOM_ID = 12015;
     public static int PROSPECTOR_BOOTS_ID = 12016;
 
+    public static int CLUE_GEODE_EASY_ID = 20358;
+    public static int CLUE_GEODE_MEDIUM_ID = 20360;
+    public static int CLUE_GEODE_HARD_ID = 20362;
+    public static int CLUE_GEODE_MASTER_ID = 20364;
+
 }
