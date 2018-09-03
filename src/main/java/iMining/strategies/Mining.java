@@ -42,7 +42,7 @@ public class Mining implements Strategy {
         RandomDrops.add(Constants.CLUE_GEODE_HARD_ID);
         RandomDrops.add(Constants.CLUE_GEODE_MASTER_ID);
 
-        //WOODCUTTING CLASS
+        //MINING CLASS
         if (getMyPlayer().getAnimation() == -1)
         {
             Core.CurrentStatus = "Mining rocks";

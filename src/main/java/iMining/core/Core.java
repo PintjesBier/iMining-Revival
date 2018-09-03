@@ -4,6 +4,7 @@ package iMining.core;
 import iMining.strategies.Banking;
 import iMining.strategies.DataGathering;
 import iMining.strategies.Mining;
+import iMining.strategies.Relog;
 import org.parabot.environment.api.interfaces.Paintable;
 import org.parabot.environment.scripts.Category;
 import org.parabot.environment.scripts.Script;
@@ -46,6 +47,7 @@ public class Core extends Script implements Paintable, MessageListener
     public boolean onExecute()
     {
         strategies.add(new DataGathering());
+        strategies.add(new Relog());
         strategies.add(new Mining());
         strategies.add(new Banking());
 
