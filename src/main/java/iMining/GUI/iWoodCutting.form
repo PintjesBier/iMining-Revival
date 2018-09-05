@@ -26,6 +26,8 @@
             <item value="Gold"/>
             <item value="Mithril"/>
             <item value="Adamant"/>
+            <item value="Rune (ore)"/>
+            <item value="Rune (bar)"/>
             <item value="Progressive"/>
           </model>
         </properties>

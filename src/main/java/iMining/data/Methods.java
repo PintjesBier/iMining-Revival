@@ -68,7 +68,14 @@ public class Methods
         {
             RockID = Constants.ADAMANT_ROCK_ID;
         }
-
+        else if (Core.GUIore == "Rune (ore)")
+        {
+            RockID = Constants.RUNITE_ROCK_ID;
+        }
+        else if (Core.GUIore == "Rune (bar)")
+        {
+            RockID = Constants.RUNE_BAR_ROCK_ID;
+        }
 
         return RockID;
     }

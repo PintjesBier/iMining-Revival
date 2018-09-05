@@ -11,6 +11,8 @@ public class Constants {
     static int GOLD_ROCK_ID = 7491;
     static int MITHRIL_ROCK_ID = 7492;
     static int ADAMANT_ROCK_ID = 7493;
+    static int RUNITE_ROCK_ID = 7494;
+    static int RUNE_BAR_ROCK_ID = 7495;
 
     //ORE ID's
     public static int COPPER_ORE_ID = 437;
@@ -19,10 +21,13 @@ public class Constants {
     public static int GOLD_ORE_ID = 445;
     public static int MITHRIL_ORE_ID = 448;
     public static int ADAMANT_ORE_ID = 450;
+    public static int RUNITE_ORE_ID = 452;
+    public static int RUNE_BAR_ID = 2364;
 
     //PICKAXE ID's
     public static int IRON_PICKAXE_ID = 1268;
     public static int RUNE_PICKAXE_ID = 1276;
+    public static int INFERNAL_PICKAXE_ID = 13244;
 
     //ANIMATION ID's
     public static int PICKAXE_SWINGING_ID = 624;

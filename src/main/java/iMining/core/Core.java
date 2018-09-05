@@ -63,7 +63,7 @@ public class Core extends Script implements Paintable, MessageListener
         while(gui.isVisible()) {
             Time.sleep(100);
         }
-        
+
         return true;
     }
 
