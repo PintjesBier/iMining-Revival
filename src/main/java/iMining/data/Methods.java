@@ -17,30 +17,58 @@ public class Methods
     //WOODCUTING
     public static int CheckRockToMine ()
     {
-        if (Skill.MINING.getRealLevel() < 15)
+        if (Core.GUIore == "Progressive")
+        {
+            if (Skill.MINING.getRealLevel() < 15)
+            {
+                RockID = Constants.COPPER_ROCK_ID;
+            }
+            else if (Skill.MINING.getRealLevel() >= 15 && Skill.MINING.getRealLevel() < 20)
+            {
+                RockID = Constants.IRON_ROCK_ID;
+            }
+            else if (Skill.MINING.getRealLevel() >= 20 && Skill.MINING.getRealLevel() < 40)
+            {
+                RockID = Constants.SILVER_ROCK_ID;
+            }
+            else if (Skill.MINING.getRealLevel() >= 40 && Skill.MINING.getRealLevel() < 55)
+            {
+                RockID = Constants.GOLD_ROCK_ID;
+            }
+            else if (Skill.MINING.getRealLevel() >= 55 && Skill.MINING.getRealLevel() < 70)
+            {
+                RockID = Constants.MITHRIL_ROCK_ID;
+            }
+            else if (Skill.MINING.getRealLevel() >= 70)
+            {
+                RockID = Constants.ADAMANT_ROCK_ID;
+            }
+        }
+        else if (Core.GUIore == "Copper")
         {
             RockID = Constants.COPPER_ROCK_ID;
         }
-        else if (Skill.MINING.getRealLevel() >= 15 && Skill.MINING.getRealLevel() < 20)
+        else if (Core.GUIore == "Iron")
         {
             RockID = Constants.IRON_ROCK_ID;
         }
-        else if (Skill.MINING.getRealLevel() >= 20 && Skill.MINING.getRealLevel() < 40)
+        else if (Core.GUIore == "Silver")
         {
             RockID = Constants.SILVER_ROCK_ID;
         }
-        else if (Skill.MINING.getRealLevel() >= 40 && Skill.MINING.getRealLevel() < 55)
+        else if (Core.GUIore == "Gold")
         {
             RockID = Constants.GOLD_ROCK_ID;
         }
-        else if (Skill.MINING.getRealLevel() >= 55 && Skill.MINING.getRealLevel() < 70)
+        else if (Core.GUIore == "Mithril")
         {
             RockID = Constants.MITHRIL_ROCK_ID;
         }
-        else if (Skill.MINING.getRealLevel() >= 70)
+        else if (Core.GUIore == "Adamant")
         {
             RockID = Constants.ADAMANT_ROCK_ID;
         }
+
 
         return RockID;
     }

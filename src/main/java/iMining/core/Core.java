@@ -1,11 +1,14 @@
 package iMining.core;
 
 
+import iMining.GUI.GUI;
+import iMining.antiban.WhitelistAntiBan;
 import iMining.strategies.Banking;
 import iMining.strategies.DataGathering;
 import iMining.strategies.Mining;
 import iMining.strategies.Relog;
 import org.parabot.environment.api.interfaces.Paintable;
+import org.parabot.environment.api.utils.Time;
 import org.parabot.environment.scripts.Category;
 import org.parabot.environment.scripts.Script;
 import org.parabot.environment.scripts.ScriptManifest;
@@ -39,6 +42,7 @@ public class Core extends Script implements Paintable, MessageListener
     public static int StartLevel;
     public static SceneObject Rock;
     public static SceneObject BankChest;
+    public static String GUIore;
 
     //TIMER
     private static org.parabot.environment.api.utils.Timer Timer = new org.parabot.environment.api.utils.Timer();
@@ -47,11 +51,19 @@ public class Core extends Script implements Paintable, MessageListener
     public boolean onExecute()
     {
         strategies.add(new DataGathering());
+        strategies.add(new WhitelistAntiBan());
         strategies.add(new Relog());
         strategies.add(new Mining());
         strategies.add(new Banking());
 
         provide(strategies);
+
+        //LOAD GUI
+        GUI gui = new GUI();
+        while(gui.isVisible()) {
+            Time.sleep(100);
+        }
+        
         return true;
     }
 
