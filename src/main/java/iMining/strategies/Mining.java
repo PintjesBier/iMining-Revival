@@ -23,7 +23,7 @@ import static org.rev317.min.api.methods.Players.getMyPlayer;
 public class Mining implements Strategy {
     @Override
     public boolean activate() {
-        return Game.isLoggedIn() && !Inventory.isFull();
+        return !Inventory.isFull();
     }
 
     @Override
@@ -31,22 +31,34 @@ public class Mining implements Strategy {
     {
         //VARIABLES
         List<Integer> RandomDrops = new ArrayList<>();
-        RandomDrops.add(Constants.AMETHYST_ID);
-        RandomDrops.add(Constants.MBOX_ID);
-        RandomDrops.add(Constants.PROSPECTOR_HAT_ID);
-        RandomDrops.add(Constants.PROSPECTOR_TOP_ID);
-        RandomDrops.add(Constants.PROSPECTOR_BOTTOM_ID);
-        RandomDrops.add(Constants.PROSPECTOR_BOOTS_ID);
-        RandomDrops.add(Constants.CLUE_GEODE_EASY_ID);
-        RandomDrops.add(Constants.CLUE_GEODE_MEDIUM_ID);
-        RandomDrops.add(Constants.CLUE_GEODE_HARD_ID);
-        RandomDrops.add(Constants.CLUE_GEODE_MASTER_ID);
+        if (RandomDrops == null)
+        {
+            RandomDrops.add(Constants.AMETHYST_ID);
+            RandomDrops.add(Constants.MBOX_ID);
+            RandomDrops.add(Constants.PROSPECTOR_HAT_ID);
+            RandomDrops.add(Constants.PROSPECTOR_TOP_ID);
+            RandomDrops.add(Constants.PROSPECTOR_BOTTOM_ID);
+            RandomDrops.add(Constants.PROSPECTOR_BOOTS_ID);
+            RandomDrops.add(Constants.CLUE_GEODE_EASY_ID);
+            RandomDrops.add(Constants.CLUE_GEODE_MEDIUM_ID);
+            RandomDrops.add(Constants.CLUE_GEODE_HARD_ID);
+            RandomDrops.add(Constants.CLUE_GEODE_MASTER_ID);
+        }
 
         //MINING CLASS
         if (getMyPlayer().getAnimation() == -1)
         {
             Core.CurrentStatus = "Mining rocks";
             Logger.addMessage("iMining: Mining rocks", true);
+
+            //WAIT FOR ACTION
+            Time.sleep(new SleepCondition() {
+                @Override
+                public boolean isValid() {
+                    return getMyPlayer().getAnimation() == -1;
+                }
+            }, 7500);
+
             Core.Rock = SceneObjects.getClosest(Methods.CheckRockToMine());
             Core.Rock.interact(SceneObjects.Option.MINE);
 
@@ -69,13 +81,6 @@ public class Mining implements Strategy {
                 }
             }, 2000);
 
-            //WAIT FOR ACTION
-            Time.sleep(new SleepCondition() {
-                @Override
-                public boolean isValid() {
-                    return getMyPlayer().getAnimation() == -1;
-                }
-            }, 7500);
         }
 
         //LOOP THROUGH RANDOM DROPS

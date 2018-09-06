@@ -31,7 +31,7 @@ import java.util.ArrayList;
         description = "",
         name = "iMining",
         servers = { "Revival" },
-        version = 1.0)
+        version = 1.1)
 
 public class Core extends Script implements Paintable, MessageListener
 {

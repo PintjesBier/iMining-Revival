@@ -36,9 +36,9 @@ public class Relog implements Strategy {
             Time.sleep(new SleepCondition() {
                 @Override
                 public boolean isValid() {
-                    return Interfaces.getOpenInterfaceId() == -1;
+                    return Interfaces.getOpenInterfaceId() == -1 && Game.isLoggedIn();
                 }
-            }, 2000);
+            }, 5000);
 
             Time.sleep(3000, 4000);
 

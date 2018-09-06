@@ -54,7 +54,7 @@ public class Banking implements Strategy {
                 Time.sleep(new SleepCondition() {
                     @Override
                     public boolean isValid() {
-                        return !Inventory.contains(Constants.COPPER_ORE_ID, Constants.IRON_ORE_ID, Constants.SILVER_ORE_ID, Constants.GOLD_ORE_ID, Constants.MITHRIL_ORE_ID, Constants.ADAMANT_ORE_ID, Constants.RUNITE_ORE_ID, Constants.RUNE_BAR_ID);
+                        return !Inventory.contains(Constants.COPPER_ORE_ID, Constants.IRON_ORE_ID, Constants.TIN_ORE_ID, Constants.GOLD_ORE_ID, Constants.MITHRIL_ORE_ID, Constants.ADAMANT_ORE_ID, Constants.RUNITE_ORE_ID, Constants.RUNE_BAR_ID);
                     }
                 }, 5000);
 

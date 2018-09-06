@@ -29,7 +29,7 @@ public class Methods
             }
             else if (Skill.MINING.getRealLevel() >= 20 && Skill.MINING.getRealLevel() < 40)
             {
-                RockID = Constants.SILVER_ROCK_ID;
+                RockID = Constants.TIN_ROCK_ID;
             }
             else if (Skill.MINING.getRealLevel() >= 40 && Skill.MINING.getRealLevel() < 55)
             {
@@ -54,7 +54,7 @@ public class Methods
         }
         else if (Core.GUIore == "Silver")
         {
-            RockID = Constants.SILVER_ROCK_ID;
+            RockID = Constants.TIN_ROCK_ID;
         }
         else if (Core.GUIore == "Gold")
         {

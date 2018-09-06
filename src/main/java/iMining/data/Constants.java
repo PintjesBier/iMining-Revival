@@ -7,7 +7,7 @@ public class Constants {
     //ROCK ID's
     static int COPPER_ROCK_ID = 7484;
     static int IRON_ROCK_ID = 7455;
-    static int SILVER_ROCK_ID = 7485;
+    static int TIN_ROCK_ID = 7485;
     static int GOLD_ROCK_ID = 7491;
     static int MITHRIL_ROCK_ID = 7492;
     static int ADAMANT_ROCK_ID = 7493;
@@ -17,7 +17,7 @@ public class Constants {
     //ORE ID's
     public static int COPPER_ORE_ID = 437;
     public static int IRON_ORE_ID = 441;
-    public static int SILVER_ORE_ID = 443;
+    public static int TIN_ORE_ID = 443;
     public static int GOLD_ORE_ID = 445;
     public static int MITHRIL_ORE_ID = 448;
     public static int ADAMANT_ORE_ID = 450;
